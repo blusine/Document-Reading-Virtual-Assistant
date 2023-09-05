@@ -56,7 +56,7 @@ def results(filename):
     # You can use TextBlob or other NLP libraries to process the file here
     # and show the results.
     file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-    with open(file_path, 'r') as f:
+    with open(file_path, 'r', encoding='ISO-8859-1') as f:
         content = f.read()
         blob = TextBlob(content)
         # Do more with the content, analyze, etc.
