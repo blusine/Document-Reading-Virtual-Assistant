@@ -3,8 +3,11 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import FileStorage
+#import spacy
+#from textblob import TextBlob
 
 #from flask_uploads import ALL, UploadSet, configure_uploads
+#from flask_uploads import UploadSet, configure_uploads, DOCUMENTS
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
