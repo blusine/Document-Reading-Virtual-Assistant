@@ -1,7 +1,11 @@
+{% from 'header.html' import header %}
 <!DOCTYPE html>
 <html>
  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Document-Reading Virtual Assistant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <style>
     h1 {
       font-size: 50px;
@@ -26,10 +30,10 @@
     Welcome to Document Reading Virtual Assistant
     </h1>
   
-     <img id = "banner" src = 'https://document-reading-virtual-assistant--lusinebaghdasa1.repl.co/static/header2.jpg' >
-     <br><hr><br>
+     <img class = "img-fluid" id = "banner" src = 'https://document-reading-virtual-assistant--lusinebaghdasa1.repl.co/static/header2.jpg' >
+     <hr>
       <h2> Please upload your document to be analyzed</h2>
-     
+     <button type="button" class="btn btn-primary btn-lg">Upload</button>
    </div>
 
  </body>
