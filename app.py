@@ -1,17 +1,29 @@
 #print("Hello World!")
 from flask import Flask, render_template, request, redirect, url_for, flash
 
+from flask_wtf import FlaskForm
+from wtforms import TextAreaField, SubmitField, FileField
+from werkzeug.utils import secure_filename
+#import os
+
+# For NLP
+from textblob import TextBlob
+
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import FileStorage
-import spacy
-from textblob import TextBlob
 
 #from flask_uploads import ALL, UploadSet, configure_uploads
 #from flask_uploads import UploadSet, configure_uploads, DOCUMENTS
 
 app = Flask(__name__)
+#app.config['UPLOAD_FOLDER'] = 'uploads'
+#app.secret_key = 'some_secret_key'
+app.config['SECRET_KEY'] = 'YourSecretKey'
 app.config['UPLOAD_FOLDER'] = 'uploads'
-app.secret_key = 'some_secret_key'
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'doc', 'docx'}
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route("/")
 def hello_world():
