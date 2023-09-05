@@ -25,10 +25,14 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'doc', 'docx'}
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route("/")
-def hello_world():
-    #return "<p>Hello, World!</p>"
-    return render_template('index.html')
+class NLPForm(FlaskForm):
+    query = TextAreaField("Enter your query")
+    document = FileField("Upload a document")
+    submit = SubmitField("Ask")
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+  return render_template('index.html')
 
 if __name__ == '__main__':
   #app.run(debug=True)
