@@ -1,0 +1,13 @@
+{% from 'header.html' import header %}
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Content:</h2>
+  <p>{{ content }}</p>
+  
+  <h2>Analysis:</h2>
+  {% for sentence in analysis %}
+    <p>{{ sentence }}</p>
+  {% endfor %}
+</body>
+</html>
