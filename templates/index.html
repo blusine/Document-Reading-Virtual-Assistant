@@ -5,7 +5,11 @@
   <body>
   <div id = "container">
   <h2> Please upload your document to be analyzed</h2> 
-  <button type="button" class="btn btn-primary btn-lg">Upload</button>
+  <!--button type="button" class="btn btn-primary btn-lg">Upload</button-->
+      <form action="/" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="Upload">
+  </form>
   </div>
  </body>
 </html>
